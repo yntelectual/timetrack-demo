@@ -29,7 +29,7 @@ Running
 The whole build is managed via maven, including the docker build.
 
 1. ```docker run -d -p 9080:8080 --env LEGACY_SYSTEM_URL=http://172.17.0.2:8080 yntelectual/timetrack-frontend```
-2. Navigate to ```http://localhost:9080/timetrack-frontend/list``` (based on your port mapping) 
+2. Navigate to ```http://localhost:9080/timetrack-frontend/``` (based on your port mapping) 
 
 You should expose the container port ```8080``` on some host port and you need to pass in the URL of the legacy syste mvia env param ```LEGACY_SYSTEM_URL```.
 Note that the URL needs to be accessible from the newly created container(until the linking is done via docker network or compose).   
