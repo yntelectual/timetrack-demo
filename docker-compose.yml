@@ -1,0 +1,11 @@
+version: '2'
+services:
+  frontend:
+    image: yntelectual/timetrack-frontend
+    ports:
+    - "8080:8080"
+    links:
+    - legacy
+  legacy:
+    image: alirizasaral/timetracker:1
+

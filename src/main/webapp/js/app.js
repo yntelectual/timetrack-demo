@@ -1,16 +1,16 @@
 angular.module('app', ['ngRoute', 'ngResource', 'angular-growl', 'ngAnimate']);
 angular.module('app').config(function ($routeProvider, $locationProvider) {
     $routeProvider
-            .when("/list", {
+            .when("/", {
                 templateUrl: "partials/list.html"
             })
             .when("/add-entry", {
                 templateUrl: "partials/add.html"
             })
             .otherwise({
-                redirectTo: '/list'
+                redirectTo: '/'
             });
-    $locationProvider.html5Mode(true);
+//    $locationProvider.html5Mode(true);
 });
 
 angular.module('app').config(['growlProvider', function (growlProvider) {

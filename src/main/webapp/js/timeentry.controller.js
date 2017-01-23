@@ -9,8 +9,11 @@ function TimeEntryCtrl($scope, TimeEntryService, growl) {
     vm.email = null;
     vm.entry = {};
 
-
     vm.fetchData = function () {
+        //do not pass empty string to backend
+        if (!vm.email) {
+            vm.email = null;
+        }
         TimeEntryService.query({offset: vm.offset, length: vm.length, email: vm.email}, function (data) {
             console.log('got data');
             growl.success("<b>Success</b> Fetched data from legacy service", {});

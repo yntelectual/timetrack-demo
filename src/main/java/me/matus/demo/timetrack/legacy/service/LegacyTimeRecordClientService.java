@@ -51,6 +51,10 @@ public class LegacyTimeRecordClientService {
     private LegacyTimeRecordApi getLegacyClient() {
         ResteasyClient client = new ResteasyClientBuilder().build();
         String legacyURL = System.getenv("LEGACY_SYSTEM_URL");
+        if (legacyURL==null) {
+            //fallback to docker compose hostname
+            legacyURL = "http://legacy:8080";
+        } 
         LOG.info("Trying to fetch data from {}", legacyURL);
         ResteasyWebTarget target = client.target(legacyURL);
         LegacyTimeRecordApi restApiClient = target.proxy(LegacyTimeRecordApi.class);
