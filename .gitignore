@@ -1,0 +1,10 @@
+bin/
+target/
+.metadata/
+.settings/
+.project
+.classpath
+.recommenders/
+RemoteSystemsTempFiles/
+visualee/
+nb-configuration.xml

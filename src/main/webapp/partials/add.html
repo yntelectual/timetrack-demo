@@ -1,0 +1,18 @@
+<div ng-controller="TimeEntryCtrl as vm" class="col-md-6">
+    <h2>Add new Time entry</h2>  
+    <form>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="Email" ng-model="vm.entry.email">
+        </div>
+        <div class="form-group">
+            <label for="Start">Start</label>
+            <input type="datetime-local" class="form-control" id="Start" ng-model="vm.entry.start">
+        </div>
+        <div class="form-group">
+            <label for="End">Start</label>
+            <input type="datetime-local" class="form-control" id="End" ng-model="vm.entry.end">
+        </div>
+        <button type="submit" class="btn btn-default" ng-click="vm.create()">Submit</button>
+    </form>
+</div>

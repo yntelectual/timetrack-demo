@@ -1,0 +1,32 @@
+<div ng-controller="TimeEntryCtrl as vm"> 
+    <h2>{{vm.title}}</h2>  
+    <div class="col-md-4">
+        <form>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="Email" ng-model="vm.email">
+            </div>
+            <button type="submit" class="btn btn-primary" ng-click="vm.fetchData()">Search</button>
+        </form>
+    </div>
+    <div class="col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Time entry results</div>
+            <div class="panel-body">
+                <table class="table">
+                    <thead><tr><td>Email</td><td>Start</td><td>End</td></tr></thead>
+                    <tbody>
+                        <tr ng-repeat="entry in vm.entries track by $index">
+                            <td>{{entry.email}}</td>
+                            <td>{{entry.start | date:'dd.MM.yyyy hh:mm:ss'}}</td>
+                            <td>{{entry.end | date:'dd.MM.yyyy hh:mm:ss'}}</td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </div>
+            <div class="panel-footer">
+                <button class="btn btn-primary" ng-click="vm.prev()" ng-disabled="vm.offset == 0">Previous Page</button>  <button class="btn btn-primary" ng-click="vm.next()">Next Page</button>
+            </div>
+        </div>
+    </div>
+</div>
